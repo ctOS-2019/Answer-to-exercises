@@ -7,3 +7,12 @@
 
 在一行中输出最大值及最大值的最小下标，中间用一个空格分开。
 '''
+length = int(input())
+list = input().split()
+max = 0
+for i in range(len(list)):
+    if int(list[i]) > int(list[max]):
+        max = i
+print(list[max], max)
+# 也许这些长度提示是拿来加快运行的？比如提前终止循环？
+# I don't know.
