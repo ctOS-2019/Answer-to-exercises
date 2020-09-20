@@ -7,3 +7,23 @@
 
 在一行中输出转换后的十进制数。题目保证输出在长整型范围内。
 '''
+source=input()
+sortstr=''
+first = True
+flag = False
+for i in range(len(source)):
+    if '0'<=source[i]<='9' or 'a'<=source[i]<='f' or 'A'<=source[i]<='F':
+        sortstr += source[i]
+        if first and i > 0:
+            first=False
+            for i in source[:i]:
+                if i == '-':
+                    flag=True
+try:
+    output = str(int('0x{0}'.format(sortstr), 16))
+    if flag:
+        print('-' + output)
+    else:
+        print(output)
+except:
+    print(0)
